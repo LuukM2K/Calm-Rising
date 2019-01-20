@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Calm Rising{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
 
     <!-- bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -10,13 +13,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 
     {% block stylesheets %}
         <style>
-            * {
-                padding: 0;
-                margin: 0;
-            }
+
+
             body {
                 background-color: #171F2D;
             }
@@ -51,6 +55,26 @@
                 justify-content: space-between;
 
             }
+
+            .fab {
+                padding: 0 7px 0;
+                margin-left: 12px;
+
+
+            }
+
+            .main-container {
+                padding: 90px;
+                margin:0px 300px;
+
+            }
+            .h1-body {
+                color: #F5F5F5;
+                text-align: center;
+                border-bottom: 1px solid #272F3E;
+                padding-bottom: 10px;
+            }
+
         </style>
     {% endblock %}
 </head>
@@ -89,7 +113,14 @@
                     <a class="nav-link text-white" href="#">Apply</a>
                 </li>
             </ul>
+
+
+            <a class="fab fa-youtube" style="color: #FE2E2E;" href="https://www.youtube.com/channel/UCRq_wAsVG0LsAjPP3SFak_Q" ></a>
+            <a class="fab fa-instagram" style="color: #ffffff;" href="https://www.instagram.com/calmrising/"></a>
+            <a class="fab fa-twitter" style="color: #20A1F0;" href=""></a>
         </div>
+
+
         <div>
             <button class="login-button">
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -109,18 +140,33 @@
 
 
 
-        {% block fos_user_content %}{% endblock %}
-        {% block body %}{% endblock %}
+{% block header %}
+{% endblock %}
+
+<div class="main-container">
+    {% block body %}
+<div class="body-container">
+    <h1 class="h1-body">About Calm Rising</h1>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-            crossorigin="anonymous"></script>{% block javascripts %}{% endblock %}
+
+</div>
+
+    {% endblock %}
+
+    {% block fos_user_content %}
+    {% endblock %}
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>{% block javascripts %}{% endblock %}
 </body>
 </html>
