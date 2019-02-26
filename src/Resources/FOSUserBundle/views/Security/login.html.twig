@@ -1,36 +1,42 @@
 {% extends 'base.html.twig' %}
 
 {% trans_default_domain 'FOSUserBundle' %}
+    {% block fos_user_content %}
+        <div class="main-container">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+    <div class="login-container"><h1 class="h1-body">Login</h1>
+        <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
-{% block fos_user_content %}
-{% if error %}
-    <div class="alert alert-danger" role="alert">
-        {{ error.messageKey|trans(error.messageData, 'security') }}
+            <br>
+            <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Email address"
+                   class="form-control" required autofocus/>
+            <br>
+            <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
+            <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required/>
+            <div class="checkbox">
+                <br>
+                <div class="pretty p-icon p-curve p-pulse">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                    <div class="state p-info-o"><i class="icon mdi mdi-check"></i>
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                    </div>
+                </div>
+                {#<label class="pull-right"><a href="{{ path('fos_user_registration_register') }}">Nog geen account, maak#}
+                {#er#}
+                {#een aan.</a></label>#}
+            </div>
+            <input type="submit"
+                   class="btn btn-lg btn-primary btn-block"
+                   id="_submit"
+                   name="_submit"
+                   value="{{ 'security.login.submit'|trans }}"/>
+        </form>
     </div>
-{% endif %}
-
-<form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Email address" class="form-control" required autofocus />
-    <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required />
-    <div class="checkbox">
-        <label>
-            <input type="checkbox"
-                   id="remember_me"
-                   name="_remember_me"
-                   value="on" /> {{ 'security.login.remember_me'|trans }}
-        </label>
-          <label class="pull-right"><a href="{{ path('fos_user_registration_register') }}">Nog geen account, maak er een aan.</a></label>
-
-    </div>
-    <input type="submit"
-           class="btn btn-lg btn-primary btn-block"
-           id="_submit"
-           name="_submit"
-           value="{{ 'security.login.submit'|trans }}" />
-</form>
+</div>
 {% endblock %}

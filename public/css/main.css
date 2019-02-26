@@ -1,0 +1,112 @@
+* {
+	color: white;
+}
+
+.btn-primary {
+	background-color: transparent;
+	border: 3px solid #fb244d;
+	transition: .3s ease-in-out;
+	letter-spacing: 3px;
+	font-size: 22px;
+}
+
+.btn-primary:hover {
+	background-color: #fb244d;
+	transition: .3s ease-in-out;
+	border: 3px solid #fb244d;
+
+}
+
+.register-text {
+	color: white;
+}
+
+.pretty {
+	color: white;
+	margin-bottom: 15px;
+}
+
+body {
+	background-color: #171F2D;
+	font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+	border-bottom: 4px solid #fb244d;
+	height: 75px;
+}
+
+.nav-link {
+	color: #F5F5F5;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.dropdown-menu {
+	background-color: #171F2D;
+	border-bottom: #272F3E;
+}
+
+.dropdown-item {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	transition: .3s ease-in-out;
+
+}
+
+.dropdown:hover {
+	color: #5eb5e0;
+	transition: .3s ease-in-out;
+
+}
+
+.dropdown-item:hover {
+	transition: .2s ease-in-out;
+	background-color: #dcdee2;
+	color: #000b1e;
+
+}
+
+.dropdown-item {
+	transition: .2s ease-in-out;
+}
+
+.login-button {
+	border: 3px solid #fb244d;
+	border-radius: 15px;
+	background-color: transparent;
+	padding: 2px;
+	width: 100px;
+}
+
+.yeet {
+	justify-content: space-between;
+
+}
+
+.fab {
+	padding: 0 7px 0;
+	margin-left: 12px;
+
+}
+
+.main-container {
+	padding: 70px;
+	margin: 150px 150px 0 150px;
+}
+
+.h1-body {
+	color: #F5F5F5;
+	text-align: center;
+	padding-bottom: 10px;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 5px;
+}
+
+.login-container {
+	border: 3px solid #1C222B;
+	border-radius: 50px;
+	padding: 25px 75px 75px;
+	background-color: #28303F;
+	overflow: hidden;
+}

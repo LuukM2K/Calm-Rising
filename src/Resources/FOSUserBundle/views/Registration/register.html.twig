@@ -3,14 +3,21 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit"
-               class="btn btn-lg btn-primary btn-block"
-               id="_submit"
-               name="_submit"
-               value="{{ 'registration.submit'|trans }}"/>
+    <div class="main-container">
+        <div class="login-container"><h1 class="h1-body">Register</h1>
+            <br>
+            <div class="register-text">
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                {{ form_widget(form) }}
+            </div>
+            <div>
+                <input type="submit"
+                       class="btn btn-lg btn-primary btn-block"
+                       id="_submit"
+                       name="_submit"
+                       value="{{ 'registration.submit'|trans }}"/>
+            </div>
+            {{ form_end(form) }}
+        </div>
     </div>
-    {{ form_end(form) }}
 {% endblock %}
